@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nucleus - Login</title>
+  <link rel="stylesheet" href="public/css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-neutral-800">
+  <section class="h-screen flex justify-center items-center">
+    <container class="container-md p-4 bg-neutral-100 shadow-2xl">
+      <div class="text-center pb-2">
+        <div class="text-lg font-semibold">Login</div>
+      </div>
+      <hr>
+      <form id="login-form" class="pt-4" action="/login" method="POST">
+        <div class="mb-2">
+          <input type="text" class="p-2" id="login-username" name="username" placeholder="Username">
+        </div>
+        <div>
+          <input type="password" class="p-2" id="login-password" name="password" placeholder="Password">
+        </div>
+      </form>
+      <div class="text-center pt-4">
+        <button type="submit" form="login-form" class="rounded bg-emerald-600 text-white p-2">Login</button>
+        <a href="/register"><button class="rounded bg-blue-500 text-white p-2">Register</button></a>
+      </div>
+    </container>
+  </section>
+</body>
+
+</html>

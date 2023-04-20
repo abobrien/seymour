@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // Define model schema
-let LocalUserSchema = mongoose.Schema({
+let UserSchema = mongoose.Schema({
     username: {
         type: String,
         required: true
@@ -21,4 +21,4 @@ let LocalUserSchema = mongoose.Schema({
 })
 
 // Export to app
-module.exports = mongoose.model("LocalUser", LocalUserSchema)
+module.exports = mongoose.model("User", UserSchema)

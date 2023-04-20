@@ -2,11 +2,10 @@ const express = require("express")
 const http = require("http")
 const app = express()
 const path = require("path")
-const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 const cookies = require("cookie-parser")
-const passport = require("passport")
 const session = require("express-session")
+const passport = require("passport")
 
 // Create server
 const server = http.createServer(app)
@@ -20,19 +19,18 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookies())
 
 // Setup Passport.js session handler
-require("./src/middleware/passport/auth")
-
 app.use(session({
   secret: "secret",
-  resave: true,
+  resave: false,
   saveUninitialized: true
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(function (req, res, next) {
-  res.locals.isLoggedIn = req.isAuthenticated()
-  next()
-})
+require("./src/middleware/passport/auth")(passport)
+// app.use(function (req, res, next) {
+//   res.locals.isLoggedIn = req.isAuthenticated()
+//   next()
+// })
 
 // Setup DB
 require("./src/middleware/mongoose/connect")

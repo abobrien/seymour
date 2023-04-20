@@ -2,7 +2,7 @@
 
 ## Folder Structure
 
-The **public** directory is used for files which can be safely exposed to the Internet and run client-side. 
+The **public** directory contains files which can be safely exposed to the Internet and processed client-side. 
 
 **public**
 * css

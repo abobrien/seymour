@@ -1,11 +1,11 @@
 const LocalStrategy = require("passport-local").Strategy
 const bcrypt = require("bcrypt")
-const LocalUser = require("../../models/user-model")
+const User = require("../../models/user-model")
 
 module.exports = function (passport) {
   passport.use(
     new LocalStrategy({ usernameField: "username" }, (username, password, done) => {
-      LocalUser.findOne({ username: username })
+      User.findOne({ username: username })
         .then((user) => {
           // If user is not found, return an error
           if (!user) {
@@ -28,24 +28,13 @@ module.exports = function (passport) {
   )
 
   passport.serializeUser(function (user, done) {
-    done(null, user.id)
+    done(null, user)
   })
 
   passport.deserializeUser(function (id, done) {
-    LocalUser.findById(id, function (err, user) {
-      done(err, user)
-    })
+    User.findById(id)
+      .then((user) => {
+        done(null, user)
+      })
   })
 }
-
-// Validate user has an active session
-ensureAuthenticated = function (req, res, next) {
-  if (req.isAuthenticated()) {
-    res.locals.login = req.isAuthenticated()
-    return next()
-  }
-  res.redirect("/restricted_content")
-}
-
-// Export to app
-module.exports = ensureAuthenticated
