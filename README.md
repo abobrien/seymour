@@ -18,13 +18,13 @@ The **src** directory contains functional code and secure content which is proce
 
 **src**
 * config
-  * Configuration files and environmental variables used across the app
+  * Constants and environmental variables used across the app
 * controllers
-  * Business logic, often in conjunction with middleware
+  * Business logic, often used in conjunction with middleware
 * middleware
   * Segregating middlewares by purpose (authentication, database, etc.)
 * models
-  * Representing objects from an ORM\ODM, often in conjunction with middlewares
+  * Representing objects from an ORM\ODM
 * routes
   * Directing requests and responses, often in conjunction with controllers
 * tests

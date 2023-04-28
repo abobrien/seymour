@@ -73,8 +73,8 @@ router.get("/login", (req, res) => {
 
 router.post("/login",
   passport.authenticate("local", {
-    failureRedirect: "restricted_content",
-    successRedirect: "welcome"
+    failureRedirect: "public/html/restricted_content.html",
+    successRedirect: "/welcome"
   })
 )
 

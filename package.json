@@ -4,7 +4,7 @@
   "description": "A Node.js web app template",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "postcss public/css/tailwind.css -o public/css/style.css && node app.js",
     "tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css"
   },
   "author": "Andrew O'Brien",
