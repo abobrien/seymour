@@ -1,7 +1,7 @@
 {
-  "name": "nucleus",
+  "name": "seymour",
   "version": "0.1.0",
-  "description": "A Node.js web app template",
+  "description": "A diet tracking app",
   "main": "app.js",
   "scripts": {
     "start": "postcss public/css/tailwind.css -o public/css/style.css && node app.js",

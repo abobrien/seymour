@@ -1,4 +1,4 @@
-# Nucleus
+# Seymour
 
 ## Folder Structure
 
@@ -7,6 +7,8 @@ The **public** directory contains files which can be safely exposed to the Inter
 **public**
 * css
   * Style sheets
+* fonts
+  * Non-standard fonts
 * html
   * Static HTML
 * img

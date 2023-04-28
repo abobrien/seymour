@@ -18,7 +18,7 @@ ensureAuthenticated = (req, res, next) => {
 
 // Define routes
 router.get("/", (req, res) => {
-  res.redirect("login")
+  res.redirect("/login")
 })
 
 router.get("/register", (req, res) => {
