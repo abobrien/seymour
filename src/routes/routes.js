@@ -13,7 +13,7 @@ ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next()
   }
-  res.redirect("/restricted_content")
+  res.redirect("public/html/restricted_content.html")
 }
 
 // Define routes
@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/register", (req, res) => {
-  res.render("session/register")
+  res.render("register")
 })
 
 router.post("/register", (req, res) => {
@@ -68,26 +68,38 @@ router.post("/register", (req, res) => {
 })
 
 router.get("/login", (req, res) => {
-  res.render("session/login")
+  res.render("login")
 })
 
 router.post("/login",
   passport.authenticate("local", {
     failureRedirect: "public/html/restricted_content.html",
-    successRedirect: "/welcome"
+    successRedirect: "/dashboard"
   })
 )
 
 router.get("/logout", (req, res) => {
-  res.render("session/login")
-})
-
-router.get("/welcome", (req, res) => {
-  res.render("welcome")
+  res.render("login")
 })
 
 router.get("/restricted_content", (req, res) => {
   res.render("restricted_content")
+})
+
+router.get("/dashboard", ensureAuthenticated, (req, res) => {
+  res.render("dashboard", {user: req.user.username})
+})
+
+router.get("/food_diary", ensureAuthenticated, (req, res) => {
+  res.render("food_diary")
+})
+
+router.get("/progress_tracker", ensureAuthenticated, (req, res) => {
+  res.render("progress_tracker")
+})
+
+router.get("/grocery_list", ensureAuthenticated, (req, res) => {
+  res.render("grocery_list")
 })
 
 // Export to app

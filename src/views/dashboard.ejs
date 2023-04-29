@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seymour - Dashboard</title>
+  <%- include("./partials/styles") %>
+</head>
+
+<body class="bg-neutral-100">
+
+  <%- include("./partials/beta_banner") %>
+  <%- include("./partials/header") %>
+
+  <!-- Cards -->
+  <section class="md:p-4">
+
+    <!-- Welcome Card -->
+    <div class="p-4 md:p-6 md:mb-4">
+      <div class="text-gray-600">
+        <h3 class="font-semibold text-gray-900 text-xl md:text-2xl mb-1">
+          Welcome back, <%= user %>
+        </h3>
+        <p>
+          You are on track for you goals!
+        </p>
+      </div>
+    </div>
+
+    <!-- Food Card -->
+    <div class="rounded-md border border-gray-200 m-2 md:m-4"
+      style="background-image: url(public/img/food_diary.jpg); background-position: center; background-size: cover;">
+      <a href="/food_diary"
+        class="relative flex items-start justify-between rounded-md bg-gradient-to-r from-gray-950/75 to-gray-950/20 p-4 md:hover:shadow-xl md:p-6">
+        <div class="text-neutral-100">
+          <h3 class="text-lg font-semibold sm:text-xl">
+            Food Diary
+          </h3>
+          <p class="mt-2 sm:block">
+            Logging what you eat and drink each day helps you understand your eating habits so you can make smart
+            decisions on how to change your diet to meet your goals.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Progress Card -->
+    <div class="rounded-md border border-gray-200 m-2 md:m-4"
+      style="background-image: url(public/img/progress_tracker.jpg); background-position: center; background-size: cover;">
+      <a href="/progress_tracker"
+        class="relative flex items-start justify-between rounded-md bg-gradient-to-r from-gray-950/75 to-gray-950/20 p-4 md:hover:shadow-xl md:p-6">
+        <div class="text-neutral-100">
+          <h3 class="text-lg font-semibold sm:text-xl">
+            Progress Tracker
+          </h3>
+          <p class="mt-2 sm:block">
+            Monitoring your weight, measuring your body, and tracking clothing sizes helps you connect your diet and
+            activity so you can make ajustments to keep on track.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Groceries Card -->
+    <div class="rounded-md border border-gray-200 m-2 md:m-4"
+      style="background-image: url(public/img/grocery_list.jpg); background-position: center; background-size: cover;">
+      <a href="/grocery_list"
+        class="relative flex items-start justify-between rounded-md bg-gradient-to-r from-gray-950/75 to-gray-950/20 p-4 md:hover:shadow-xl md:p-6">
+        <div class="text-neutral-100">
+          <h3 class="text-lg font-semibold sm:text-xl">
+            Grocery List
+          </h3>
+          <p class="mt-2 sm:block">
+            Making a grocery list can help to limit impulse purchases and structure your shopping for meals and snacks
+            that are aligned with your health goals.
+          </p>
+        </div>
+      </a>
+    </div>
+
+  </section>
+
+</body>
+
+</html>
